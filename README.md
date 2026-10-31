@@ -57,8 +57,48 @@ Fale naturalmente, com as suas palavras. Nas primeiras vezes, vale usar um dos [
 | [Pesquisa na web](skills/web-search/SKILL.md) | Responde dúvidas atuais (versões, lançamentos, mercado) com fontes citadas | "Qual a versão estável do Node hoje?" |
 | [Revisão de portfólio](skills/portfolio-review/SKILL.md) | Dá feedback sobre o seu portfólio e GitHub antes de buscar vagas | "O que falta no meu GitHub para uma vaga júnior?" |
 | [Caminho AI Builder](skills/ai-builder-path/SKILL.md) | Ajuda você a escolher o próximo passo na Carreira AI Builder | "Qual Formação AI Builder combina comigo?" |
+| [Análise de vulnerabilidades](skills/vulnerability-analysis/SKILL.md) | Avalia código, arquitetura e infraestrutura considerando contexto, impacto, probabilidade e mitigação | "Analise este login e me ajude a corrigir a falha." |
 
 A pesquisa na web usa a busca do seu harness. Se ele não tiver busca própria, veja [como conectar o You.com](docs/youcom-mcp.md), que tem uma opção gratuita.
+
+## 🛡️ Especialização em segurança
+
+Este projeto foi evoluído com a skill `vulnerability-analysis`, uma especialização defensiva em AppSec e DevSecOps. Em vez de apenas apontar uma falha, o agente pergunta sobre o ambiente, separa vulnerabilidade técnica de risco real, avalia impacto e probabilidade, mapeia referências como CWE, OWASP e MITRE ATT&CK, orienta a correção e diferencia resultados observados de testes ainda não executados.
+
+A melhoria escolhida foi o **Relatório Padronizado de Auditoria DevSecOps**, com escopo, evidência, classificação, plano de correção, validação e risco residual.
+
+### Arquivos da especialização
+
+- [`skills/vulnerability-analysis/SKILL.md`](skills/vulnerability-analysis/SKILL.md): roteiro que o agente segue.
+- [`skills/vulnerability-analysis/README.md`](skills/vulnerability-analysis/README.md): explicação da skill para pessoas.
+- [`agent/knowledge/security-basic.md`](agent/knowledge/security-basic.md): fundamentos de segurança e referências.
+- [`agent/persona.md`](agent/persona.md): postura de mentor em AppSec e DevSecOps.
+- [`AGENTS.md`](AGENTS.md): registro da skill e do conhecimento.
+- [`evidence/`](evidence/): código vulnerável, código corrigido, testes e evidências do fluxo.
+
+### Como executar a demonstração
+
+Abra um terminal na raiz do projeto, a pasta que contém [`AGENTS.md`](AGENTS.md), e execute:
+
+```powershell
+python -m unittest discover -s evidence -p "test_*.py" -v
+```
+
+Para usar o agente no Hermes, instale-o seguindo a documentação oficial indicada na tabela de harnesses acima, abra o terminal na raiz deste repositório e inicie o comando `hermes` conforme a instalação local. O diretório correto é importante porque o harness precisa encontrar [`AGENTS.md`](AGENTS.md).
+
+Prompts sugeridos:
+
+```text
+Analise evidence/app-vulnerable.py em um laboratório local com dados sintéticos.
+Identifique a falha, explique a causa, avalie impacto e probabilidade,
+faça o mapeamento CWE/OWASP/MITRE aplicável e mostre uma correção segura.
+```
+
+```text
+Tenho um Ubuntu de laboratório exposto à internet. O que devo verificar?
+```
+
+No segundo cenário, o comportamento esperado é o agente perguntar primeiro, uma questão por vez, sobre autenticação SSH, serviços necessários e firewall/Security Groups antes de sugerir comandos.
 
 ---
 
@@ -120,7 +160,8 @@ dio-agent/
 ├── CLAUDE.md                Atalho para o Claude Code
 ├── agent/
 │   ├── persona.md           A personalidade e o tom do agente
-│   └── knowledge/           O que o agente sabe sobre a DIO
+│   └── knowledge/           O que o agente sabe sobre a DIO e segurança
+├── evidence/                Demonstração reproduzível da análise de SQL Injection
 ├── skills/                  Uma pasta por skill, cada uma com o seu SKILL.md
 └── docs/
     ├── glossary.md          Glossário de termos
@@ -140,3 +181,4 @@ Tem uma ideia de skill? Veja [como criar uma skill](skills/README.md) e abra um 
 O DIO Agent foi criado para acompanhar você nos Bootcamps e Formações da DIO. A ideia é simples: aprender na era da IA fica mais fácil quando você tem um mentor disponível a qualquer hora.
 
 Bons estudos, e vem com a gente. 🚀
+# dio-agent

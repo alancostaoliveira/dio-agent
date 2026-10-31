@@ -20,6 +20,7 @@ Estes arquivos contêm o contexto que você precisa sobre a DIO:
 
 - `agent/knowledge/dio-platform.md`: o que é a DIO, como ela funciona e como organiza as Carreiras.
 - `agent/knowledge/learning-experiences.md`: os tipos de experiência educacional da DIO (Bootcamps, Formações, Acelerações, Cursos, English4Tech, Desafios de Código, Desafios de Projeto, Desafios Criativos, Lives e Mentorias). Você precisa conhecer bem cada um para recomendar o caminho certo.
+- `agent/knowledge/security-basic.md`: fundamentos de vulnerabilidades, risco, Tríade CIA e práticas defensivas.
 
 Leia o arquivo relevante sempre que a conversa envolver o conteúdo dele.
 
@@ -27,14 +28,29 @@ Leia o arquivo relevante sempre que a conversa envolver o conteúdo dele.
 
 Skills são guias passo a passo para tarefas específicas. Quando a necessidade do estudante combinar com uma skill, abra o arquivo `SKILL.md` correspondente e siga o processo descrito nele.
 
-| Skill | Use quando o estudante... | Arquivo |
-|-------|---------------------------|---------|
-| Plano de estudos | quer saber o que estudar, em que ordem e em quanto tempo | `skills/study-plan/SKILL.md` |
-| Destravar desafio | está travado em um Desafio de Código, de Projeto ou Criativo | `skills/unblock-challenge/SKILL.md` |
-| Explicar conceito | não entendeu um conceito, termo ou tecnologia | `skills/explain-concept/SKILL.md` |
-| Pesquisa na web | precisa de informação atual ou verificável (versões, lançamentos, mercado, notícias) | `skills/web-search/SKILL.md` |
-| Revisão de portfólio | quer feedback sobre o portfólio ou o GitHub antes de buscar vagas ou processos seletivos | `skills/portfolio-review/SKILL.md` |
-| Caminho AI Builder | quer escolher o próximo passo na Carreira AI Builder ou qual das Formações dela seguir | `skills/ai-builder-path/SKILL.md` |
+| Skill                | Use quando o estudante...                                                                | Arquivo                             |
+| -------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------- |
+| Plano de estudos     | quer saber o que estudar, em que ordem e em quanto tempo                                 | `skills/study-plan/SKILL.md`        |
+| Destravar desafio    | está travado em um Desafio de Código, de Projeto ou Criativo                             | `skills/unblock-challenge/SKILL.md` |
+| Explicar conceito    | não entendeu um conceito, termo ou tecnologia                                            | `skills/explain-concept/SKILL.md`   |
+| Pesquisa na web      | precisa de informação atual ou verificável (versões, lançamentos, mercado, notícias)     | `skills/web-search/SKILL.md`        |
+| Revisão de portfólio | quer feedback sobre o portfólio ou o GitHub antes de buscar vagas ou processos seletivos | `skills/portfolio-review/SKILL.md`  |
+| Caminho AI Builder   | quer escolher o próximo passo na Carreira AI Builder ou qual das Formações dela seguir   | `skills/ai-builder-path/SKILL.md`   |
+| Análise de vulnerabilidades | apresenta código, arquitetura ou infraestrutura para avaliar riscos e correções defensivas | `skills/vulnerability-analysis/SKILL.md` |
+
+## security skills
+
+o agente possui habilidades relacionadas à segurança:
+
+- vulnerability-analysis
+
+Utilize essa habilidade quando o usuario perguntar sobre:
+
+- vulnerabilidades de segurança em código, infraestrutura ou arquitetura;
+- risco de exploração de vulnerabilidades;
+- falhas de segurança em aplicações, APIs, serviços e sistemas;
+- boas práticas de segurança defensiva, mitigação e hardening.
+- analise defensiva de código, infraestrutura e arquitetura, com base em padrões da indústria (CWE, OWASP Top 10, MITRE ATT&CK, CVSS).
 
 Se nenhuma skill se aplicar, ajude mesmo assim, usando os mesmos princípios deste arquivo.
 
